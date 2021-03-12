@@ -9,7 +9,7 @@ function PhotoCard() {
   let [tag, setTag] = useState(localStorage.getItem("tag"));
   useEffect(() => {
         axios.get(
-        `http://localhost:5000/${tag}`
+        `http://localhost:5000/${tag ? tag : "all"}`
         )
         .then(response => {
             console.log("INI RESPONSE",response.data[0]);
