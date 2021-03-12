@@ -1,14 +1,13 @@
 import React from 'react';
+import Button from './Button';
 
 function SearchBar() {
     return (
-        <div className="container mx-auto my-4">
-            <form>
-            <div class="input-group">
-                <input type="text" className="form-control" placeholder="Search for a tag" aria-label="Dollar amount (with dot and two decimal places)"/>
-                <button className="btn-dark">Search</button>
-            </div>
-            </form>
+        <div className="container mx-auto my-4 d-flex">
+            <Button label="All"></Button>
+            <Button label="Cats"></Button>
+            <Button label="People"></Button>
+            <Button label="Flowers"></Button>
         </div>
     )
 }

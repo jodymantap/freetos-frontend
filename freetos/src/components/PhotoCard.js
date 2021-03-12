@@ -1,27 +1,31 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import CardLoading from './CardLoading';
 
 
 function PhotoCard() {
   const [name, setName] = useState([]);
+  let [loading, Loaded] = useState(true);
   useEffect(() => {
         axios.get(
-        "http://localhost:5000/api"
+        "http://localhost:5000/flowers"
         )
         .then(response => {
             console.log("INI RESPONSE",response.data[0]);
             setName(response.data[0]);
+            Loaded(false);
         })
   }, [])
   return (
     <div className="container my-auto mx-auto">
+      {loading ? <CardLoading/> : (
       <div className="row">
       {
         name.map((names) => {
             return(
             <div className="col-md">
               <div className="">
-                  <div className="card">
+                  <div className={`card hover:shadow-2xl ${loading ? 'animate-pulse' :null}`}>
                     <img src={names.media.m} className="card-img-top" alt="..."/>
                     <div className="card-body">
                       <p className="card-title"><b>{names.title}</b></p>
@@ -35,6 +39,7 @@ function PhotoCard() {
         })
       }
       </div>
+      ) }
     </div>
   )
 }
