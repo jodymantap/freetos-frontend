@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import PhotoCard from './components/PhotoCard';
 import NavBar from './components/NavBar';
+import SearchBar from './components/SearchBar';
 
 function Mainpage() {
     
@@ -9,6 +10,9 @@ function Mainpage() {
         <div>
             <div>
                 <NavBar/>
+            </div>
+            <div>
+                <SearchBar/>
             </div>
             <div>
                 <PhotoCard/>

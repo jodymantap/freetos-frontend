@@ -14,19 +14,19 @@ function PhotoCard() {
         })
   }, [])
   return (
-    <div className="container row-cols-2">
-      <div className="">
+    <div className="container my-auto mx-auto">
+      <div className="row">
       {
         name.map((names) => {
             return(
-            <div className="col">
+            <div className="col-md">
               <div className="">
                   <div className="card">
                     <img src={names.media.m} className="card-img-top" alt="..."/>
                     <div className="card-body">
-                      <h5 className="card-title">{names.title}</h5>
-                      <p className="card-text">by {names.author.split(" ")[1]}</p>
-                      <span class="badge bg-dark">Tag</span>
+                      <p className="card-title"><b>{names.title}</b></p>
+                      <p className="card-text">by {names.author.split(" ")[1].replace(/[^\w\s]/gi, '')}</p>
+                      <span class="badge bg-dark">{names.tags.split(" ")[0]}</span>
                     </div>
                   </div>
               </div>
