@@ -6,9 +6,10 @@ import CardLoading from './CardLoading';
 function PhotoCard() {
   const [name, setName] = useState([]);
   let [loading, Loaded] = useState(true);
+  let [tag, setTag] = useState(localStorage.getItem("tag"));
   useEffect(() => {
         axios.get(
-        "http://localhost:5000/flowers"
+        `http://localhost:5000/${tag}`
         )
         .then(response => {
             console.log("INI RESPONSE",response.data[0]);

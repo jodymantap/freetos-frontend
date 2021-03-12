@@ -2,8 +2,10 @@ import React from 'react';
 
 function Button({label}) {
     return (
-        <div data-testid="button" className="btn btn-dark me-2">
-            {label}
+        <div>
+            <button data-testid="button" className="btn btn-dark me-2" type="submit">
+                {label}
+            </button>
         </div>
     )
 }
